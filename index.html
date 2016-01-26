@@ -3,119 +3,72 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Title of the document</title>
 </head>
 
 <body>
-    <form method="post" id="mform" action="#">
-        <div class="left">
-            <div class="top">
-                <ul id="progressbar">
-                    <li class="active">Выберите товар</li>
-                    <li>Кое-какие детали</li>
-                    <li>Бренд</li>
-                    <li>Адрес</li>
-                    <li>И напоследок</li>
-                </ul>
-            </div>
-            <div class="content">
-                <fieldset>
-                    <p>Step 1</p>
-                    <!-- Emmet: 
-(input[type="radio"][name="product"]#prod$+label[for="prod$"]>img[src="http://placehold.it/100x100"][alt="Product $"]+span{Product $})*8
--->
-                    <input type="radio" name="productType" id="prodType1">
-                    <label for="prodType1"><img src="http://placehold.it/100/005A9D/FFFFFF" alt="Product Type 1"><span>Product Type 1</span></label>
-                    <input type="radio" name="productType" id="prodType2">
-                    <label for="prodType2"><img src="http://placehold.it/100/005A9D/FFFFFF" alt="Product Type 1"><span>Product Type 2</span></label>
-                    <input type="radio" name="product" id="prod3">
-                    <label for="prod3"><img src="http://placehold.it/100/80B3DA/FFFFFF" alt="Product 3"><span>Product 3</span></label>
-                    <input type="radio" name="product" id="prod4">
-                    <label for="prod4"><img src="http://placehold.it/100/80B3DA/FFFFFF" alt="Product 4"><span>Product 4</span></label>
-                    <input type="radio" name="product" id="prod5">
-                    <label for="prod5"><img src="http://placehold.it/100/80B3DA/FFFFFF" alt="Product 5"><span>Product 5</span></label>
-                    <input type="radio" name="product" id="prod6">
-                    <label for="prod6"><img src="http://placehold.it/100/80B3DA/FFFFFF" alt="Product 6"><span>Product 6</span></label>
-                    <input type="radio" name="product" id="prod7">
-                    <label for="prod7"><img src="http://placehold.it/100/80B3DA/FFFFFF" alt="Product 7"><span>Product 7</span></label>
-                    <input type="radio" name="product" id="prod8">
-                    <label for="prod8"><img src="http://placehold.it/100/80B3DA/FFFFFF" alt="Product 8"><span>Product 8</span></label>
-                </fieldset>
-                <fieldset>
-                    <p>Step 2</p>
-                    <!-- 
-(input[type="radio"][name="productType"]#prodType$+label[for="prodType$"]>img[src="http://placehold.it/100x100"][alt="Product Type $"]+span{Product Type $})*3                   
--->
-                    <input type="radio" name="productType" id="prodType3">
-                    <label for="prodType3"><img src="http://placehold.it/100/005A9D/FFFFFF" alt="Product Type 1"><span>Product Type 3</span></label>
-                    <input type="radio" name="productType" id="prodType4">
-                    <label for="prodType4"><img src="http://placehold.it/100/005A9D/FFFFFF" alt="Product Type 2"><span>Product Type 4</span></label>
-                    <input type="radio" name="productType" id="prodType5">
-                    <label for="prodType5"><img src="http://placehold.it/100/005A9D/FFFFFF" alt="Product Type 3"><span>Product Type 5</span></label>
-                </fieldset>
-                <fieldset>
-                    <p>Step 3</p>
-                    <input type="text" name="inputStep3" placeholder="Input here">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nam iure maiores est ex quia commodi a aliquam culpa voluptatem laborum vero, architecto obcaecati rerum nobis enim, explicabo incidunt eum!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nam iure maiores est ex quia commodi a aliquam culpa voluptatem laborum vero, architecto obcaecati rerum nobis enim, explicabo incidunt eum!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nam iure maiores est ex quia commodi a aliquam culpa voluptatem laborum vero, architecto obcaecati rerum nobis enim, explicabo incidunt eum!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nam iure maiores est ex quia commodi a aliquam culpa voluptatem laborum vero, architecto obcaecati rerum nobis enim, explicabo incidunt eum!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nam iure maiores est ex quia commodi a aliquam culpa voluptatem laborum vero, architecto obcaecati rerum nobis enim, explicabo incidunt eum!</p>
 
-                </fieldset>
-                <fieldset>
-                    <p>Step 4</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nam iure maiores est ex quia commodi a aliquam culpa voluptatem laborum vero, architecto obcaecati rerum nobis enim, explicabo incidunt eum!</p>
-                    <input type="text" name="inputStep4" placeholder="Input some shit">
-                </fieldset>
-                <fieldset>
-                    <p>Step 5</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nam iure maiores est ex quia commodi a aliquam culpa voluptatem laborum vero, architecto obcaecati rerum nobis enim, explicabo incidunt eum!</p>
-                    <input type="text" name="inputStep5" placeholder="Input here">
-                </fieldset>
-            </div>
-            <div class="bottom">
-                <div class="bottom-left">
-                    <input class="prev mbutton" type="button" value="Previous">
+    <div class="container">
+        <form id="mform" action="" class="form">
+            <div class="row form-container">
+                <div class="form-left col-sm-12 col-md-8">
+
+                    <div class="left-head">
+                        <ol id="" class="progress-tracker">
+                            <li class="progress-tracker-step active" data-step-goto="0">
+                                <span class="step-title">
+                                    <svg></svg>
+                                    <span>Appliance</span>
+                                </span>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="left-content">
+                        <fieldset>
+                            <h1>Step 1</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum expedita tempore harum itaque, inventore dolores, consectetur ratione. Eius nisi consequatur sapiente recusandae pariatur, architecto molestias dolores rem, commodi vitae obcaecati, impedit deserunt, nihil ducimus iusto. Ad fuga temporibus incidunt, quia aperiam ratione qui rerum vero veritatis, adipisci assumenda officia. Praesentium.</p>
+                        </fieldset>
+                        <fieldset>
+                            <h1>Step 2</h1>
+                            <p>Iste inventore facere, assumenda debitis nesciunt dolorem deleniti delectus fugiat dolore magni non velit dolores cumque voluptate, cupiditate quod doloribus quia pariatur minima nemo explicabo culpa enim maxime! Optio nostrum officia quia, a debitis illo excepturi ipsum natus, quisquam, atque necessitatibus, magni perferendis quaerat dolores similique inventore eos laudantium soluta.</p>
+                        </fieldset>
+                        <fieldset>
+                            <h1>Step 3</h1>
+                            <p>Consequatur doloremque optio consequuntur omnis, sint molestias officia ipsum commodi at. Commodi veniam dicta dolorem facilis hic ipsa doloremque distinctio culpa quae illo numquam architecto quibusdam tempora, necessitatibus beatae sunt consequuntur nemo quos voluptate eos esse a excepturi assumenda sed. Ipsa libero eum doloribus cumque veritatis beatae quo, doloremque eligendi!</p>
+                        </fieldset>
+                        <fieldset>
+                            <h1>Step 4</h1>
+                            <p>At quos nihil ipsum odio iusto accusamus debitis. Nulla quae molestias, reprehenderit aperiam repellendus voluptatem tempore ipsa. Aspernatur porro eveniet, ad eos numquam vel rem! Expedita, a, excepturi? Nulla ut perspiciatis optio porro. Ea voluptates, exercitationem voluptas. Hic dicta, a amet natus, debitis blanditiis veritatis perspiciatis necessitatibus aperiam, repellendus sunt.</p>
+                        </fieldset>
+                        <fieldset>
+                            <h1>Step 5</h1>
+                            <p>Autem laborum suscipit inventore nobis assumenda architecto error quaerat sunt, porro delectus ipsum esse unde similique odio exercitationem aliquam qui vitae nihil voluptas soluta maxime debitis sequi, iure dignissimos! Recusandae distinctio dolore, voluptatem doloremque ipsam provident, repudiandae fugit blanditiis corrupti odit sit qui voluptas sed fugiat non et dolorem, nihil.</p>
+                        </fieldset>
+                    </div>
+
+                    <div class="left-foot">
+                        <input class="prev btn btn-default" type="button" value=" < ">
+                        <input class="next btn btn-default" type="button" value=" > ">
+                        <input class="btn btn-success" type="submit" value="Submit">
+                    </div>
+
                 </div>
-                <div class="bottom-right">
-                    <input class="next mbutton" type="button" value="Next">
-                    <input class="mbutton" type="submit" value="Submit">
+                <div class="form-right hidden-xs hidden-sm col-md-4">
+                    <div class="right-head">Right Head</div>
+                    <div class="right-content">Right Content</div>
+                    <div class="right-foot">Right Foot</div>
                 </div>
             </div>
-        </div>
-
-        <div class="right">
-            <dl>
-                <dd>Помощь в ремонте Вашей техники становится ближе с каждым шагом.</dd>
-            </dl>
-            <dl>
-                <dt>Выберите товар</dt>
-                <dd>Lorem ipsum dolor sit amet</dd>
-            </dl>
-            <dl>
-                <dt>Кое-какие детали</dt>
-                <dd>Lorem ipsum dolor sit amet</dd>
-            </dl>
-            <dl>
-                <dt>Бренд</dt>
-                <dd>Lorem ipsum dolor sit amet</dd>
-            </dl>
-            <dl>
-                <dt>Адрес</dt>
-                <dd>Lorem ipsum dolor sit amet</dd>
-            </dl>
-            <dl>
-                <dt>И напоследок</dt>
-                <dd>Lorem ipsum dolor sit amet</dd>
-            </dl>
-        </div>
-    </form>
-
+        </form>
+    </div>
 
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 
