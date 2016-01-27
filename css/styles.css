@@ -25,10 +25,71 @@ lightsteelblue  - Disabled color
 }
 
 .left-head {
-    background-color: rgba(0, 0, 0, 0.1);
+/*    background-color: rgba(0, 0, 0, 0.1);*/
     height: 10%;
     width: 100%;
     position: relative;
+}
+
+.left-content {
+    background-color: #fff;
+    height: 80%;
+    overflow: auto;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.left-content fieldset:not(:first-of-type) {
+    display: none;
+}
+
+.left-content > fieldset > div.row {
+    background-color: silver;
+    margin: 0px;
+}
+
+.left-content > fieldset > div.row > div {
+    border: 1px solid red;
+    text-align: center;
+}
+
+.left-foot {
+    /*    background-color: rgba(0, 0, 0, 0.1);*/
+/*    height: 10%;*/
+    /*    text-align: center;*/
+    padding-top: 0.5em;
+}
+
+.left-foot > div:nth-child(1) {
+    /*    background-color: rgba(255, 215, 0, 0.9);*/
+    padding: 0;
+}
+
+.left-foot > div:nth-child(2) {
+    /*    background-color: rgba(255, 69, 0, 0.9);*/
+    padding: 0px;
+    text-align: right;
+}
+
+.right-head {
+    background-color: #005A9D;
+    height: 10%;
+    padding: 10px;
+    color: #FFF;
+    font-size: small;
+}
+
+.right-content {
+    background-color: #fff;
+    height: 80%;
+    overflow: auto;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.right-foot {
+    /*    background-color: orangered;*/
+    height: 10%;
 }
 
 #progressbar {
@@ -38,7 +99,7 @@ lightsteelblue  - Disabled color
     width: 100%;
     position: absolute;
     bottom: 0px;
-    left: 0 px;
+    left: 0px;
 }
 
 #progressbar li {
@@ -92,51 +153,6 @@ lightsteelblue  - Disabled color
     }
 }
 
-.left-content {
-    /*    background-color: forestgreen;*/
-    height: 80%;
-}
-
-.left-content fieldset:not(:first-of-type) {
-    display: none;
-}
-
-.left-foot {
-    /*    background-color: rgba(0, 0, 0, 0.1);*/
-    height: 10%;
-    /*    text-align: center;*/
-    /*        padding-top: 1.5%;*/
-}
-
-.left-foot > div:nth-child(1) {
-    /*    background-color: rgba(255, 215, 0, 0.9);*/
-    padding: 0;
-}
-
-.left-foot > div:nth-child(2) {
-    /*    background-color: rgba(255, 69, 0, 0.9);*/
-    padding: 0px;
-    text-align: right;
-}
-
-.right-head {
-    background-color: #005A9D;
-    height: 10%;
-    padding: 10px;
-    color: #FFF;
-    font-size: small;
-}
-
-.right-content {
-    /*    background-color: lightcoral;*/
-    height: 80%;
-}
-
-.right-foot {
-    /*    background-color: orangered;*/
-    height: 10%;
-}
-
 #mform input {
     padding: 10px 20px;
     background-color: white;
@@ -150,7 +166,7 @@ lightsteelblue  - Disabled color
     color: rgba(0, 90, 157, 1);
 }
 
-#mform input[type="submit"]{
+#mform input[type="submit"] {
     background-color: rgba(0, 90, 157, 0.9);
     color: #ccc;
 }
