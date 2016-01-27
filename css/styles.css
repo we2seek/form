@@ -1,6 +1,7 @@
 /*
 Colors used:
 #005a9d         - Mayster corporate color
+rgb(0, 90, 157) - Mayster corporate color
 #003660         - Darker color
 lightsteelblue  - Disabled color
 */
@@ -101,10 +102,21 @@ lightsteelblue  - Disabled color
 }
 
 .left-foot {
-    background-color: rgba(0, 0, 0, 0.1);
+    /*    background-color: rgba(0, 0, 0, 0.1);*/
     height: 10%;
-/*    text-align: center;*/
-    padding-top: 1.5%;
+    /*    text-align: center;*/
+    /*        padding-top: 1.5%;*/
+}
+
+.left-foot > div:nth-child(1) {
+    /*    background-color: rgba(255, 215, 0, 0.9);*/
+    padding: 0;
+}
+
+.left-foot > div:nth-child(2) {
+    /*    background-color: rgba(255, 69, 0, 0.9);*/
+    padding: 0px;
+    text-align: right;
 }
 
 .right-head {
@@ -123,4 +135,27 @@ lightsteelblue  - Disabled color
 .right-foot {
     /*    background-color: orangered;*/
     height: 10%;
+}
+
+#mform input {
+    padding: 10px 20px;
+    background-color: white;
+    color: rgba(0, 90, 157, 0.4);
+    border: 1px solid rgba(0, 90, 157, 0.4);
+}
+
+#mform input:hover {
+    border: 1px solid #005a9d;
+    box-shadow: 0 0 0 1px #005a9d;
+    color: rgba(0, 90, 157, 1);
+}
+
+#mform input[type="submit"]{
+    background-color: rgba(0, 90, 157, 0.9);
+    color: #ccc;
+}
+
+#mform input[type="submit"]:hover {
+    background-color: rgba(0, 90, 157, 1);
+    color: #fff;
 }
