@@ -6,9 +6,10 @@ rgb(0, 90, 157) - Mayster corporate color
 lightsteelblue  - Disabled color
 */
 
-.container .form-container {
+.form-container {
     background-color: #DCE2E4;
-    height: 600px;
+    /*    height: 600px;*/
+    height: 100vh;
 }
 
 .form-left {
@@ -25,15 +26,15 @@ lightsteelblue  - Disabled color
 }
 
 .left-head {
-    /*    background-color: rgba(0, 0, 0, 0.1);*/
-    height: 10%;
+    /*    background-color: rgba(0, 0, 0, 0.2);*/
+    height: 4%;
     width: 100%;
     position: relative;
 }
 
 .left-content {
     background-color: #fff;
-    height: 80%;
+    height: 86%;
     overflow: auto;
     padding: 1em;
     margin-top: 1em;
@@ -49,14 +50,13 @@ lightsteelblue  - Disabled color
 }
 
 .left-content > fieldset > div.row > div {
-/*    border: 1px solid red;*/
+    /*    border: 1px solid red;*/
     text-align: center;
 }
 
 .left-foot {
     /*    background-color: rgba(0, 0, 0, 0.1);*/
-    /*    height: 10%;*/
-    /*    text-align: center;*/
+    height: 10%;
     padding-top: 0.5em;
 }
 
@@ -73,15 +73,15 @@ lightsteelblue  - Disabled color
 
 .right-head {
     background-color: #005A9D;
-    height: 10%;
-    padding: 10px;
+    height: 4%;
+    padding: 5px 10px;
     color: #FFF;
     font-size: small;
 }
 
 .right-content {
     background-color: #fff;
-    height: 80%;
+    height: 86%;
     overflow: auto;
     padding: 1em;
     margin-top: 1em;
@@ -150,6 +150,9 @@ lightsteelblue  - Disabled color
     #progressbar li > span {
         visibility: visible;
         /*        display: inline;*/
+    }
+    .form-container {
+        height: 600px;
     }
 }
 
