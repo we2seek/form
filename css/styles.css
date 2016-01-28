@@ -19,13 +19,13 @@ lightsteelblue  - Disabled color
 }
 
 .form-right {
-    /*            background-color: lawngreen;*/
+    /*    background-color: lawngreen;*/
     height: 100%;
     padding: 10px 10px 10px 5px;
 }
 
 .left-head {
-/*    background-color: rgba(0, 0, 0, 0.1);*/
+    /*    background-color: rgba(0, 0, 0, 0.1);*/
     height: 10%;
     width: 100%;
     position: relative;
@@ -44,18 +44,18 @@ lightsteelblue  - Disabled color
 }
 
 .left-content > fieldset > div.row {
-    background-color: silver;
+    /*    background-color: silver;*/
     margin: 0px;
 }
 
 .left-content > fieldset > div.row > div {
-    border: 1px solid red;
+/*    border: 1px solid red;*/
     text-align: center;
 }
 
 .left-foot {
     /*    background-color: rgba(0, 0, 0, 0.1);*/
-/*    height: 10%;*/
+    /*    height: 10%;*/
     /*    text-align: center;*/
     padding-top: 0.5em;
 }
@@ -174,4 +174,28 @@ lightsteelblue  - Disabled color
 #mform input[type="submit"]:hover {
     background-color: rgba(0, 90, 157, 1);
     color: #fff;
+}
+
+fieldset input[type="radio"] {
+    display: none;
+}
+
+fieldset input[type="radio"] + label {
+    /*    background-color: yellow;*/
+    border: 1px solid transparent;
+}
+
+fieldset input[type="radio"] + label:hover {
+    border: 1px solid #005a9d;
+    box-shadow: 0 0 0 1px #005a9d;
+}
+
+fieldset input[type="radio"] + label span {
+    font-size: small;
+    font-weight: normal;
+}
+
+fieldset input[type="radio"]:checked + label {
+    border: 1px solid #005a9d;
+    box-shadow: 0 0 0 1px #005a9d;
 }
