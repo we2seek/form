@@ -15,27 +15,27 @@ lightsteelblue  - Disabled color
 .form-left {
     /*    background-color: yellow;*/
     height: 100%;
-    padding: 10px 5px 10px 10px;
+    /*    padding: 10px 5px 10px 10px;*/
     /*    position: relative;*/
 }
 
 .form-right {
     /*    background-color: lawngreen;*/
     height: 100%;
-    padding: 10px 10px 10px 5px;
+    /*    padding: 10px 10px 10px 5px;*/
 }
 
 .left-head {
-    /*    background-color: rgba(0, 0, 0, 0.2);*/
-    height: 4%;
+/*    background-color: rgba(0, 0, 0, 0.2);*/
+    height: 10%;
     width: 100%;
     position: relative;
 }
 
 .left-content {
     background-color: #fff;
-    height: 86%;
-    overflow: auto;
+    height: 75%;
+    overflow-y: scroll;
     padding: 1em;
     margin-top: 1em;
 }
@@ -55,9 +55,11 @@ lightsteelblue  - Disabled color
 }
 
 .left-foot {
-    /*    background-color: rgba(0, 0, 0, 0.1);*/
-    height: 10%;
-    padding-top: 0.5em;
+    min-height: 4.35em;
+    width: 100%;
+    padding: 1em 1.25em;
+    background-color: white;
+    border-top: 1px solid #dedede;
 }
 
 .left-foot > div:nth-child(1) {
@@ -73,7 +75,7 @@ lightsteelblue  - Disabled color
 
 .right-head {
     background-color: #005A9D;
-    height: 4%;
+    height: 10%;
     padding: 5px 10px;
     color: #FFF;
     font-size: small;
@@ -81,7 +83,7 @@ lightsteelblue  - Disabled color
 
 .right-content {
     background-color: #fff;
-    height: 86%;
+    height: 75%;
     overflow: auto;
     padding: 1em;
     margin-top: 1em;
@@ -89,7 +91,7 @@ lightsteelblue  - Disabled color
 
 .right-foot {
     /*    background-color: orangered;*/
-    height: 10%;
+    height: 10hv;
 }
 
 #progressbar {
@@ -143,24 +145,12 @@ lightsteelblue  - Disabled color
     /*    display: inline;*/
 }
 
-@media (min-width: 600px) {
-    #progressbar li.active {
-        width: auto;
-    }
-    #progressbar li > span {
-        visibility: visible;
-        /*        display: inline;*/
-    }
-    .form-container {
-        height: 600px;
-    }
-}
-
 #mform input {
-    padding: 10px 20px;
+    /*    padding: 10px 20px;*/
     background-color: white;
     color: rgba(0, 90, 157, 0.4);
     border: 1px solid rgba(0, 90, 157, 0.4);
+    min-width: 25%;
 }
 
 #mform input:hover {
@@ -186,6 +176,9 @@ fieldset input[type="radio"] {
 fieldset input[type="radio"] + label {
     /*    background-color: yellow;*/
     border: 1px solid transparent;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
 }
 
 fieldset input[type="radio"] + label:hover {
@@ -201,4 +194,17 @@ fieldset input[type="radio"] + label span {
 fieldset input[type="radio"]:checked + label {
     border: 1px solid #005a9d;
     box-shadow: 0 0 0 1px #005a9d;
+}
+
+@media (min-width: 768px) {
+    #progressbar li.active {
+        width: auto;
+    }
+    #progressbar li > span {
+        visibility: visible;
+        /*        display: inline;*/
+    }
+    .form-container {
+        height: 600px;
+    }
 }
