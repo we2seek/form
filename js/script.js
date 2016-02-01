@@ -1,15 +1,14 @@
 "use strict";
 
 var currentStep = 0,
-    nextStep,
     maxStep,
     stepStack = [],
     currentFieldset,
     nextFieldset,
     form = $('#mform'),
-    btnSubmit = $('#mform input[type=submit]'),
-    btnPrev = $('#mform input.prev'),
-    btnNext = $('#mform input.next'),
+    btnSubmit = $('#mform .btnSubmit'),
+    btnPrev = $('#mform .prev'),
+    btnNext = $('#mform .next'),
     fieldsets = $('#mform fieldset'),
     progressbar = $('#progressbar li'),
     radioProd = $('#mform input[name="prod"]'),
@@ -42,21 +41,24 @@ function showStep(nextStep) {
         progressbar.eq(nextStep).removeClass('pass');
         progressbar.eq(nextStep).addClass('active');
     }
-    
+
     if (nextStep == 1) {
         progressbar.eq(1).show();
     }
-    
+
     if (nextStep == 0) {
         progressbar.eq(1).hide();
     }
 
-    // Do not remeber last step if we go back 
+    // Remember steps history. Do not remember last step if we go back
     // to prevent loop between steps
     if (nextStep > currentStep) {
         stepStack.push(currentStep);
     }
-    
+
+    // Add info to right panel (Summary)
+    //$('.right-content');
+
     currentStep = nextStep;
 }
 
@@ -80,15 +82,45 @@ function showButtons(step) {
     }
 }
 
-function showProgress(step) {
-    progressbar.eq(step).addClass('active');
-}
-
-function hideProgress(step) {
-    progressbar.eq(step).removeClass('active');
-}
-
 $(document).ready(function () {
+
+    // One click form
+    $('#sendOneClick').click(function (e) {
+        var inputPhone = $('#onePhone2');
+        var userPhone = inputPhone.val();
+        var regEx = /^\+380\d{9}$/;
+        if (!userPhone || userPhone == '+380' || !regEx.test(userPhone)) {
+            inputPhone.addClass('err').delay(1000).removeClass('err', 1000).focus();
+        } else {
+            $('#oneClickModal').hide();
+            //showPreloader(true);
+            $.ajax({
+                method: "post",
+                url: HTTP_HOST + 'Request/ajax',
+                data: {
+                    method: 'saveForm',
+                    form: {user: {phone: userPhone}}
+                },
+                success: function (r) {
+                    showPreloader(false);
+                    alert("Ваша заявка принята. Наш сотрудник свяжется с Вами в ближайшее время");
+                    setTimeout(function () {
+                        window.location.replace(HTTP_HOST);
+                    }, 3000);
+                },
+                error: function (e) {
+                    showPreloader(false);
+                    console.log(e.status + ': ' + e.statusText + '; ' + e.responseText);
+                    alert("Произошла ошибка. Пожалуйста, перезвоните нам.");
+                    setTimeout(function () {
+                        window.location.replace(HTTP_HOST);
+                    }, 3000);
+                }
+            });
+        }
+    });
+
+//    $("#onePhone2").keydown(filterKeyPresses);
 
     // Temporary prevent form submit
     form.submit(function (e) {
@@ -97,11 +129,19 @@ $(document).ready(function () {
     });
 
     // Hide buttons
-    btnSubmit.hide();
-    btnPrev.hide();
-    
+    //btnSubmit.hide();
+    //btnPrev.hide();
+
     // Hide second step on progressbar
     progressbar.eq(1).hide();
+
+    //Hide main form 
+    //form.hide();
+
+    $('#btnShowForm').click(function () {
+        $('.preForm').hide();
+        form.show();
+    });
 
     btnNext.click(function () {
         showStep(currentStep + 1);
@@ -111,10 +151,9 @@ $(document).ready(function () {
         showStep(stepStack.pop());
     });
 
-    radioProd.click(function () {
+    /*radioProd.click(function () {
         // Deselect productType checked if there
         radioProdType.filter(':checked').prop('checked', false);
-
         showStep(currentStep + 1);
     });
 
@@ -127,8 +166,8 @@ $(document).ready(function () {
         } else {
             showStep(currentStep + 1);
         }
-    });
+    });*/
 
     maxStep = fieldsets.length - 1;
-
 });
+

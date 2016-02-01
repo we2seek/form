@@ -12,8 +12,54 @@
 <body>
 
     <div class="container">
-        <form id="mform" action="" class="form">
-            <div class="row form-container">
+        <div class="row preForm">
+            <div class="col-xs-12 col-sm-6">
+                <p>Вы можете вызвать мастера в 1 клик! Специалист свяжется с Вами в течение 5 минут, уточнит все детали и подберет для Вас подходящего мастера.</p>
+                <button type="button" class="myBtn" data-toggle="modal" data-target="#oneClickModal">Вызвать мастера
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="oneClickModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Вызвать мастера</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <p>Свяжитесь с нами по телефону <a href="tel:+380800302600">0800 302 600</a> или оставьте свой контактный номер ниже.</p>
+
+                                <form id="oneClickForm2" class="form-inline">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="onePhone2">Тел.:</label>
+                                        <div class="input-group">
+                                            <input id="onePhone2" name="form[user][phone]" type="text" class="form-control" value="+380" maxlength="13">
+                                        </div>
+                                    </div>
+                                    <input id="sendOneClick" type="button" class="btn btn-primary" value="Обратный звонок">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Modal -->
+
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <p>Если же Вы не хотите или не можете говорить с нашим специалистом, заполните, пожалуйста, форму самостоятельно, и мы свяжемся с Вами в день выезда мастера, непосредственно перед его приездом.
+                </p>
+                <button id="btnShowForm" type="button" class="myBtn">
+                    Заполнить форму и вызвать мастера.
+                </button>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <form id="mform" action="" class="form-container">
                 <div class="form-left col-sm-12 col-md-8">
 
                     <div class="left-head">
@@ -29,75 +75,95 @@
                     <div class="left-content">
                         <fieldset>
                             <h1>Step 1</h1>
-                            <div class="row">
-                                <!--(div.col-xs-6.col-sm-4>input#prod$[type="radio"][name="prod"]+label[for="prod$"]>img[src="http://placehold.it/120"][alt="placehold $"]+span{Prod $})*9-->
-                                <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prodType1" name="prodType">
-                                    <label for="prodType1" class="thumbnail">
-                                        <img src="http://placehold.it/120" alt="placehold 1">
-                                        <span>Lorem ipsum dolor sit.</span>
-                                    </label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prodType2" name="prodType">
-                                    <label for="prodType2" class="thumbnail">
-                                        <img src="http://placehold.it/120" alt="placehold 2">
-                                        <span>Lorem ipsum dolor </span>
-                                    </label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prod3" name="prod">
-                                    <label for="prod3" class="thumbnail"><img src="http://placehold.it/120" alt="placehold 3"><span>Prod 3</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prod4" name="prod">
-                                    <label for="prod4" class="thumbnail"><img src="http://placehold.it/120" alt="placehold 4"><span>Prod 4</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prod5" name="prod">
-                                    <label for="prod5" class="thumbnail"><img src="http://placehold.it/120" alt="placehold 5"><span>Prod 5</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prod6" name="prod">
-                                    <label for="prod6" class="thumbnail"><img src="http://placehold.it/120" alt="placehold 6"><span>Prod 6</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prod7" name="prod">
-                                    <label for="prod7" class="thumbnail"><img src="http://placehold.it/120" alt="placehold 7"><span>Prod 7</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prod8" name="prod">
-                                    <label for="prod8" class="thumbnail"><img src="http://placehold.it/120" alt="placehold 8"><span>Prod 8</span></label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prod9" name="prod">
-                                    <label for="prod9" class="thumbnail"><img src="http://placehold.it/120" alt="placehold 9"><span>Prod 9</span></label>
-                                </div>
-                            </div>
+                            <div class="row222">
+                                
+<div class="col-xs-6 col-sm-4"><label for="prod1" class="radio-thumbnail"><input type="radio" id="prod1" name="prod"><span class="thumbnail">
+            <img src="img/washer.svg" alt="">
+            <div class="caption">
+                <p>Lorem ipsum dolor sit.</p>
+            </div>
+        </span></label></div>
+<div class="col-xs-6 col-sm-4"><label for="prod2" class="radio-thumbnail"><input type="radio" id="prod2" name="prod"><span class="thumbnail">
+            <img src="img/washer.svg" alt="">
+            <div class="caption">
+                <p>Sequi maiores possimus facilis!</p>
+            </div>
+        </span></label></div>
+<div class="col-xs-6 col-sm-4"><label for="prod3" class="radio-thumbnail"><input type="radio" id="prod3" name="prod"><span class="thumbnail">
+            <img src="img/washer.svg" alt="">
+            <div class="caption">
+                <p>Nobis expedita, nihil aperiam.</p>
+            </div>
+        </span></label></div>
+<div class="col-xs-6 col-sm-4"><label for="prod4" class="radio-thumbnail"><input type="radio" id="prod4" name="prod"><span class="thumbnail">
+            <img src="img/washer.svg" alt="">
+            <div class="caption">
+                <p>Quod dolor sit amet.</p>
+            </div>
+        </span></label></div>
+<div class="col-xs-6 col-sm-4"><label for="prod5" class="radio-thumbnail"><input type="radio" id="prod5" name="prod"><span class="thumbnail">
+            <img src="img/washer.svg" alt="">
+            <div class="caption">
+                <p>Provident alias non possimus!</p>
+            </div>
+        </span></label></div>
+<div class="col-xs-6 col-sm-4"><label for="prod6" class="radio-thumbnail"><input type="radio" id="prod6" name="prod"><span class="thumbnail">
+            <img src="img/washer.svg" alt="">
+            <div class="caption">
+                <p>Fuga, perferendis nihil aliquid.</p>
+            </div>
+        </span></label></div>
+<div class="col-xs-6 col-sm-4"><label for="prod7" class="radio-thumbnail"><input type="radio" id="prod7" name="prod"><span class="thumbnail">
+            <img src="img/washer.svg" alt="">
+            <div class="caption">
+                <p>Maxime veritatis autem, impedit.</p>
+            </div>
+        </span></label></div>
+<div class="col-xs-6 col-sm-4"><label for="prod8" class="radio-thumbnail"><input type="radio" id="prod8" name="prod"><span class="thumbnail">
+            <img src="img/washer.svg" alt="">
+            <div class="caption">
+                <p>Illo odio, quo aliquam.</p>
+            </div>
+        </span></label></div>
+<div class="col-xs-6 col-sm-4"><label for="prod9" class="radio-thumbnail"><input type="radio" id="prod9" name="prod"><span class="thumbnail">
+            <img src="img/washer.svg" alt="">
+            <div class="caption">
+                <p>Alias pariatur ducimus cum.</p>
+            </div>
+        </span></label></div>
                         </fieldset>
                         <fieldset>
                             <h1>Step 2</h1>
-                            <div class="row">
+                            <div class="row2">
                                 <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prodType3" name="prodType">
-                                    <label for="prodType3" class="thumbnail">
-                                        <img src="http://placehold.it/120" alt="placehold 1">
-                                        <span>Lorem ipsum dolor sit.</span>
-                                    </label>
+                                    <div class="thumbnail">
+                                        <img src="http://placehold.it/110" alt="placehold 1">
+                                        <input type="radio" id="prodType3" name="prodType">
+                                        <label for="prodType3">
+                                            <div>Lorem ipsum dolor sit.</div>
+                                        </label>
+                                    </div>
+
                                 </div>
                                 <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prodType4" name="prodType">
-                                    <label for="prodType4" class="thumbnail">
-                                        <img src="http://placehold.it/120" alt="placehold 1">
-                                        <span>Lorem ipsum dolor sit.</span>
-                                    </label>
+                                    <div class="thumbnail">
+                                        <img src="http://placehold.it/110" alt="placehold 1">
+                                        <input type="radio" id="prodType4" name="prodType">
+                                        <label for="prodType4">
+                                            <div>Lorem ipsum dolor sit.</div>
+                                        </label>
+                                    </div>
+
                                 </div>
                                 <div class="col-xs-6 col-sm-4">
-                                    <input type="radio" id="prodType5" name="prodType">
-                                    <label for="prodType5" class="thumbnail">
-                                        <img src="http://placehold.it/120" alt="placehold 1">
-                                        <span>Lorem ipsum dolor sit.</span>
-                                    </label>
+                                    <div class="thumbnail">
+                                        <img src="http://placehold.it/110" alt="placehold 1">
+                                        <input type="radio" id="prodType5" name="prodType">
+                                        <label for="prodType5">
+                                            <div>Lorem ipsum dolor sit.</div>
+                                        </label>
+                                    </div>
+
                                 </div>
                             </div>
                         </fieldset>
@@ -113,38 +179,42 @@
                             <h1>Step 5</h1>
                             <p>Autem laborum suscipit inventore nobis assumenda architecto error quaerat sunt, porro delectus ipsum esse unde similique odio exercitationem aliquam qui vitae nihil voluptas soluta maxime debitis sequi, iure dignissimos! Recusandae distinctio dolore, voluptatem doloremque ipsam provident, repudiandae fugit blanditiis corrupti odit sit qui voluptas sed fugiat non et dolorem, nihil.</p>
                         </fieldset>
-                    </div>
-
-                    <div class="left-foot">
-
-                        <div class="col-xs-6 col-sm-4">
-                            <input class="prev btn btn-default" type="button" value=" < ">
                         </div>
 
-                        <div class="col-xs-6 col-sm-offset-4 col-sm-4">
-                            <input class="next btn btn-default" type="button" value=" > ">
-                            <input class="btn btn-primary" type="submit" value="Submit">
+                        <div class="left-foot">
+
+                            <div class="col-xs-6 col-sm-4">
+                                <button class="prev">
+                                    <span class="glyphicon glyphicon-menu-left"></span>
+                                </button>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-offset-4 col-sm-4">
+                                <button class="next">
+                                    <span class="glyphicon glyphicon-menu-right"></span>
+                                </button>
+                                <button class="btnSubmit" type="submit">
+                                    Заказать
+                                </button>
+                            </div>
+
+                            <div class="clearfix"></div>
                         </div>
 
-
-
-                        <div style="clear:both;"></div>
                     </div>
-
-                </div>
-                <div class="form-right hidden-xs hidden-sm col-md-4">
-                    <div class="right-head">С каждым шагом вы становитесь круче.</div>
-                    <div class="right-content">Right Content</div>
-                    <div class="right-foot">Right Foot</div>
-                </div>
+                    <div class="form-right hidden-xs hidden-sm col-md-4">
+                        <div class="right-head">Помощь в ремонте Вашей техники становится ближе с каждым шагом.</div>
+                        <div class="right-content">&nbsp;</div>
+                        <div class="right-foot">&nbsp;</div>
+                    </div>
+            </form>
             </div>
-        </form>
-    </div>
+        </div>
 
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
 </body>
 
-</html>    
+</html>

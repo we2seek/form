@@ -6,10 +6,17 @@ rgb(0, 90, 157) - Mayster corporate color
 lightsteelblue  - Disabled color
 */
 
+.row {
+    margin-right: auto;
+    margin-left: auto;
+    /*width: 100%;*/
+}
+
 .form-container {
-    background-color: #DCE2E4;
+    background-color: #F5F5F5;
     /*    height: 600px;*/
     height: 100vh;
+    font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 .form-left {
@@ -26,7 +33,7 @@ lightsteelblue  - Disabled color
 }
 
 .left-head {
-/*    background-color: rgba(0, 0, 0, 0.2);*/
+    /*    background-color: rgba(0, 0, 0, 0.2);*/
     height: 10%;
     width: 100%;
     position: relative;
@@ -57,7 +64,7 @@ lightsteelblue  - Disabled color
 .left-foot {
     min-height: 4.35em;
     width: 100%;
-    padding: 1em 1.25em;
+    padding: 0.5em 1.25em;
     background-color: white;
     border-top: 1px solid #dedede;
 }
@@ -91,7 +98,7 @@ lightsteelblue  - Disabled color
 
 .right-foot {
     /*    background-color: orangered;*/
-    height: 10hv;
+    height: 10%;
 }
 
 #progressbar {
@@ -145,55 +152,71 @@ lightsteelblue  - Disabled color
     /*    display: inline;*/
 }
 
-#mform input {
-    /*    padding: 10px 20px;*/
+.prev,
+.next {
     background-color: white;
     color: rgba(0, 90, 157, 0.4);
     border: 1px solid rgba(0, 90, 157, 0.4);
     min-width: 25%;
+    height: 40px;
 }
 
-#mform input:hover {
+.prev:hover,
+.next:hover {
     border: 1px solid #005a9d;
     box-shadow: 0 0 0 1px #005a9d;
     color: rgba(0, 90, 157, 1);
 }
 
-#mform input[type="submit"] {
-    background-color: rgba(0, 90, 157, 0.9);
-    color: #ccc;
+.btnSubmit {
+    min-width: 25%;
+    height: 40px;
+    padding: 0px 25px;
+    color: white;
+    background-color: #005a9d;
+    border: 1px solid rgba(0, 90, 157, 1);
+    box-shadow: 0 0 0 1px #005a9d;
 }
 
-#mform input[type="submit"]:hover {
-    background-color: rgba(0, 90, 157, 1);
-    color: #fff;
+.btnSubmit:hover {
+    background-color: white;
+    color: #005a9d;
 }
 
-fieldset input[type="radio"] {
+
+/* Radio buttons grid */
+.radio-thumbnail {
+    margin: 0 auto;
+    display: block;
+    font-size: small;
+    font-weight: normal;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.radio-thumbnail > input[type="radio"] {
     display: none;
 }
 
-fieldset input[type="radio"] + label {
-    /*    background-color: yellow;*/
-    border: 1px solid transparent;
-    height: 150px;
-    width: 150px;
-    margin: 0 auto;
+.radio-thumbnail > input[type="radio"] + .thumbnail {
+    border: 2px solid transparent;
+    height: 160px;
 }
 
-fieldset input[type="radio"] + label:hover {
-    border: 1px solid #005a9d;
-    box-shadow: 0 0 0 1px #005a9d;
+.radio-thumbnail > input[type="radio"] + .thumbnail:hover {
+    border: 2px solid #005a9d;
 }
 
-fieldset input[type="radio"] + label span {
-    font-size: small;
-    font-weight: normal;
+.radio-thumbnail > input[type="radio"]:checked + .thumbnail {
+    border: 2px solid #005a9d;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
 }
 
-fieldset input[type="radio"]:checked + label {
-    border: 1px solid #005a9d;
-    box-shadow: 0 0 0 1px #005a9d;
+.radio-thumbnail .thumbnail {
+/*    height: 2em;*/
+/*    margin-top: 1em;*/
+    
 }
 
 @media (min-width: 768px) {
@@ -202,9 +225,24 @@ fieldset input[type="radio"]:checked + label {
     }
     #progressbar li > span {
         visibility: visible;
-        /*        display: inline;*/
+        /*display: inline;*/
     }
     .form-container {
         height: 600px;
     }
+}
+
+
+/* Contact details fix */
+
+.contact-details-list li:before {
+    width: 90px;
+    height: 90px;
+}
+
+
+/* fb fix */
+
+.social-icons.yellow li a {
+    height: auto;
 }
