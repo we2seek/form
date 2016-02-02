@@ -12,7 +12,8 @@ var currentStep = 0,
     fieldsets = $('#mform fieldset'),
     progressbar = $('#progressbar li'),
     radioProd = $('#mform input[name="prod"]'),
-    radioProdType = $('#mform input[name="prodType"]');
+    radioProdType = $('#mform input[name="prodType"]'),
+    modalDialog = $('#oneClickModal');
 
 function showStep(nextStep) {
 
@@ -84,6 +85,11 @@ function showButtons(step) {
 
 $(document).ready(function () {
 
+    //Modal dialog height
+    /*   $('#modalForm').on('show.bs.modal', function () {
+     $('#mform').css('height', $(window).height()*0.9);
+     });*/
+
     // One click form
     $('#sendOneClick').click(function (e) {
         var inputPhone = $('#onePhone2');
@@ -92,8 +98,8 @@ $(document).ready(function () {
         if (!userPhone || userPhone == '+380' || !regEx.test(userPhone)) {
             inputPhone.addClass('err').delay(1000).removeClass('err', 1000).focus();
         } else {
-            $('#oneClickModal').hide();
-            //showPreloader(true);
+            modalDialog.modal('toggle');
+            showPreloader(true);
             $.ajax({
                 method: "post",
                 url: HTTP_HOST + 'Request/ajax',
@@ -101,26 +107,20 @@ $(document).ready(function () {
                     method: 'saveForm',
                     form: {user: {phone: userPhone}}
                 },
-                success: function (r) {
+                success: function () {
                     showPreloader(false);
                     alert("Ваша заявка принята. Наш сотрудник свяжется с Вами в ближайшее время");
-                    setTimeout(function () {
-                        window.location.replace(HTTP_HOST);
-                    }, 3000);
                 },
                 error: function (e) {
                     showPreloader(false);
                     console.log(e.status + ': ' + e.statusText + '; ' + e.responseText);
                     alert("Произошла ошибка. Пожалуйста, перезвоните нам.");
-                    setTimeout(function () {
-                        window.location.replace(HTTP_HOST);
-                    }, 3000);
                 }
             });
         }
     });
 
-//    $("#onePhone2").keydown(filterKeyPresses);
+    $("#onePhone2").keydown(filterKeyPresses);
 
     // Temporary prevent form submit
     form.submit(function (e) {
@@ -129,8 +129,8 @@ $(document).ready(function () {
     });
 
     // Hide buttons
-    //btnSubmit.hide();
-    //btnPrev.hide();
+    btnSubmit.hide();
+    btnPrev.hide();
 
     // Hide second step on progressbar
     progressbar.eq(1).hide();
@@ -138,10 +138,10 @@ $(document).ready(function () {
     //Hide main form 
     //form.hide();
 
-    $('#btnShowForm').click(function () {
-        $('.preForm').hide();
-        form.show();
-    });
+    //$('#btnShowForm').click(function () {
+    //    $('.preForm').hide();
+    //    form.show();
+    //});
 
     btnNext.click(function () {
         showStep(currentStep + 1);
@@ -151,7 +151,7 @@ $(document).ready(function () {
         showStep(stepStack.pop());
     });
 
-    /*radioProd.click(function () {
+    radioProd.click(function () {
         // Deselect productType checked if there
         radioProdType.filter(':checked').prop('checked', false);
         showStep(currentStep + 1);
@@ -166,7 +166,7 @@ $(document).ready(function () {
         } else {
             showStep(currentStep + 1);
         }
-    });*/
+    });
 
     maxStep = fieldsets.length - 1;
 });

@@ -12,11 +12,13 @@
 <body>
 
     <div class="container">
-        <div class="row preForm">
+        <div class="row">
             <div class="col-xs-12 col-sm-6">
                 <p>Вы можете вызвать мастера в 1 клик! Специалист свяжется с Вами в течение 5 минут, уточнит все детали и подберет для Вас подходящего мастера.</p>
+
                 <button type="button" class="myBtn" data-toggle="modal" data-target="#oneClickModal">Вызвать мастера
                 </button>
+
                 <!-- Modal -->
                 <div class="modal fade" id="oneClickModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
@@ -51,165 +53,49 @@
             <div class="col-xs-12 col-sm-6">
                 <p>Если же Вы не хотите или не можете говорить с нашим специалистом, заполните, пожалуйста, форму самостоятельно, и мы свяжемся с Вами в день выезда мастера, непосредственно перед его приездом.
                 </p>
-                <button id="btnShowForm" type="button" class="myBtn">
-                    Заполнить форму и вызвать мастера.
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalForm">
+                    Оформить заявку
                 </button>
-            </div>
 
-        </div>
-
-        <div class="row">
-            <form id="mform" action="" class="form-container">
-                <div class="form-left col-sm-12 col-md-8">
-
-                    <div class="left-head">
-                        <ul id="progressbar">
-                            <li class="active"><span>Step 1</span></li>
-                            <li><span>Step 2</span></li>
-                            <li><span>Step 3</span></li>
-                            <li><span>Step 4</span></li>
-                            <li><span>Step 5</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="left-content">
-                        <fieldset>
-                            <h1>Step 1</h1>
-                            <div class="row222">
-                                <!--(div.col-xs-6.col-sm-4>label[for="prod$"].radio-thumbnail>input#prod$[type="radio"][name="prod"]+span.thumbnail>img[src="img/washer.svg"]+span>lorem4)*9-->
-                                <div class="col-xs-6 col-sm-4">
-                                    <label for="prod1" class="radio-thumbnail">
-                                        <input type="radio" id="prod1" name="prod">
-                                        <span class="thumbnail">
-                                            <img src="img/washer.svg" alt="">
-                                            <span>Стиральная машина</span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <label for="prod2" class="radio-thumbnail">
-                                        <input type="radio" id="prod2" name="prod"><span class="thumbnail"><img src="img/refrigerator.svg" alt=""><span>Холодильник</span></span>
-                                    </label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <label for="prod3" class="radio-thumbnail">
-                                        <input type="radio" id="prod3" name="prod"><span class="thumbnail"><img src="img/tv-set.svg" alt=""><span>Телевизор</span></span>
-                                    </label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <label for="prod4" class="radio-thumbnail">
-                                        <input type="radio" id="prod4" name="prod"><span class="thumbnail"><img src="img/washer.svg" alt=""><span>Doloremque atque minus enim!</span></span>
-                                    </label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <label for="prod5" class="radio-thumbnail">
-                                        <input type="radio" id="prod5" name="prod"><span class="thumbnail"><img src="img/washer.svg" alt=""><span>Velit veniam totam, tempora!</span></span>
-                                    </label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <label for="prod6" class="radio-thumbnail">
-                                        <input type="radio" id="prod6" name="prod"><span class="thumbnail"><img src="img/washer.svg" alt=""><span>Quas eligendi dolores accusantium.</span></span>
-                                    </label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <label for="prod7" class="radio-thumbnail">
-                                        <input type="radio" id="prod7" name="prod"><span class="thumbnail"><img src="img/washer.svg" alt=""><span>Quasi cum temporibus, repudiandae!</span></span>
-                                    </label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <label for="prod8" class="radio-thumbnail">
-                                        <input type="radio" id="prod8" name="prod"><span class="thumbnail"><img src="img/washer.svg" alt=""><span>Architecto saepe, temporibus non!</span></span>
-                                    </label>
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <label for="prod9" class="radio-thumbnail">
-                                        <input type="radio" id="prod9" name="prod"><span class="thumbnail"><img src="img/washer.svg" alt=""><span>Iure tenetur aspernatur deserunt!</span></span>
-                                    </label>
-                                </div>
-                        </fieldset>
-                        <fieldset>
-                            <h1>Step 2</h1>
-                            <div class="row2">
-                                <div class="col-xs-6 col-sm-4">
-                                    <div class="thumbnail">
-                                        <img src="http://placehold.it/110" alt="placehold 1">
-                                        <input type="radio" id="prodType3" name="prodType">
-                                        <label for="prodType3">
-                                            <div>Lorem ipsum dolor sit.</div>
-                                        </label>
-                                    </div>
-
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <div class="thumbnail">
-                                        <img src="http://placehold.it/110" alt="placehold 1">
-                                        <input type="radio" id="prodType4" name="prodType">
-                                        <label for="prodType4">
-                                            <div>Lorem ipsum dolor sit.</div>
-                                        </label>
-                                    </div>
-
-                                </div>
-                                <div class="col-xs-6 col-sm-4">
-                                    <div class="thumbnail">
-                                        <img src="http://placehold.it/110" alt="placehold 1">
-                                        <input type="radio" id="prodType5" name="prodType">
-                                        <label for="prodType5">
-                                            <div>Lorem ipsum dolor sit.</div>
-                                        </label>
-                                    </div>
-
-                                </div>
+                <!-- Modal -->
+                <div class="modal show" role="dialog" id="modalForm" tabindex="-1" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Вызов мастера</h4>
                             </div>
-                        </fieldset>
-                        <fieldset>
-                            <h1>Step 3</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero maiores voluptas expedita omnis ex, iure vero vel debitis excepturi, officia quibusdam hic, quisquam, exercitationem ea laboriosam quasi molestias iste aliquam adipisci quaerat doloremque nulla repudiandae? Ea, nemo. Corporis mollitia, deleniti illum, quia earum alias consectetur sed magni, molestiae ducimus recusandae nostrum. Delectus consequuntur assumenda perferendis, quidem ipsa rerum dolores laudantium, mollitia dicta, voluptatibus totam magnam unde inventore quisquam corrupti molestias ratione, obcaecati recusandae aperiam nemo distinctio! Nisi porro vitae ab explicabo deleniti eveniet ex deserunt, voluptatem odit architecto doloremque, repellat incidunt beatae modi eligendi enim quia repudiandae libero expedita distinctio ut delectus error quasi velit voluptatibus. Nobis iure fuga voluptatum sit quod voluptatem animi atque harum doloremque inventore possimus itaque est praesentium officiis dignissimos, molestiae eveniet excepturi blanditiis temporibus voluptate vero qui laborum odio. Soluta tempora ratione debitis, commodi perferendis nulla deleniti. Dolorum itaque nam ex commodi. Facilis eaque sunt modi fugit, in, aspernatur velit nobis nihil soluta eius dolorum repellat alias voluptate hic perferendis iusto, consequuntur dignissimos ducimus adipisci officiis eos. Deserunt minima quis laborum distinctio, exercitationem ex consequuntur porro aut praesentium. Fuga, consequuntur sit possimus qui, nemo ad beatae. Odit, esse nesciunt veritatis inventore. Dolores id, nam perspiciatis ullam necessitatibus repellendus, tempora et deserunt sed molestias quis ratione soluta provident voluptates. Recusandae nostrum distinctio, repellat odit! Natus qui, dolor in tenetur. Earum a pariatur excepturi, rem ratione sapiente nihil quod dignissimos? Delectus officiis dignissimos molestiae iure sunt quod, natus consectetur assumenda odio harum ab dolorum aspernatur reprehenderit quam iusto quis aperiam in. Asperiores at dolor voluptatem eveniet optio, eius ea, quis. Eveniet asperiores illum maxime facilis magnam, aliquid sit non dolore quod delectus sint pariatur, voluptates, reprehenderit veritatis. Vel quasi distinctio quod suscipit accusamus aperiam nam consectetur porro ratione consequatur culpa tempore ut fuga, accusantium temporibus nulla veritatis libero praesentium velit ducimus, assumenda corporis. Dolores quas vitae id tempore consectetur, odit voluptates dicta quo nostrum aut odio quidem distinctio praesentium consequatur eum at fugit molestiae nobis neque recusandae sed. Deleniti nostrum, consequatur ut temporibus, quos est ex? Unde ratione aliquid cumque maxime consequuntur doloremque sequi magni animi sint tempora iure accusamus molestias debitis recusandae consectetur quod dicta quibusdam rem iusto aperiam, quidem. Iusto distinctio, suscipit ad incidunt sapiente veritatis! Perferendis commodi maxime ut, dignissimos optio quia dolorum, fugit ex. Ratione consequatur quasi saepe quam quas at, ut libero voluptas! Nobis est, blanditiis veritatis voluptatem facilis delectus nulla rerum cumque molestiae saepe reiciendis corporis id eos magni expedita iusto rem cupiditate accusantium sed, recusandae perferendis. Iste delectus error, totam libero harum ratione perferendis laudantium, quae odio mollitia enim corporis aliquid eligendi vitae temporibus nam, ad odit aut, culpa pariatur nesciunt doloremque voluptas deserunt velit. Aperiam qui, labore obcaecati aliquid! Ad sunt alias autem doloribus culpa, quam voluptatum inventore qui veritatis atque, error quos perferendis eum sed id! Laboriosam nostrum laborum cumque ducimus accusamus, quaerat eveniet error amet repudiandae blanditiis rerum laudantium tempora, eligendi maxime recusandae necessitatibus modi iste praesentium. Natus error non expedita adipisci fugit dolore eaque architecto aspernatur.</p>
-                        </fieldset>
-                        <fieldset>
-                            <h1>Step 4</h1>
-                            <p>At quos nihil ipsum odio iusto accusamus debitis. Nulla quae molestias, reprehenderit aperiam repellendus voluptatem tempore ipsa. Aspernatur porro eveniet, ad eos numquam vel rem! Expedita, a, excepturi? Nulla ut perspiciatis optio porro. Ea voluptates, exercitationem voluptas. Hic dicta, a amet natus, debitis blanditiis veritatis perspiciatis necessitatibus aperiam, repellendus sunt.</p>
-                        </fieldset>
-                        <fieldset>
-                            <h1>Step 5</h1>
-                            <p>Autem laborum suscipit inventore nobis assumenda architecto error quaerat sunt, porro delectus ipsum esse unde similique odio exercitationem aliquam qui vitae nihil voluptas soluta maxime debitis sequi, iure dignissimos! Recusandae distinctio dolore, voluptatem doloremque ipsam provident, repudiandae fugit blanditiis corrupti odit sit qui voluptas sed fugiat non et dolorem, nihil.</p>
-                        </fieldset>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8">
+                                        Left content
+                                    </div>
+                                    <div class="hidden-xs hidden-sm col-md-4">
+                                        Right content
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
                         </div>
-
-                        <div class="left-foot">
-
-                            <div class="col-xs-6 col-sm-4">
-                                <button class="prev">
-                                    <span class="glyphicon glyphicon-menu-left"></span>
-                                </button>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-offset-4 col-sm-4">
-                                <button class="next">
-                                    <span class="glyphicon glyphicon-menu-right"></span>
-                                </button>
-                                <button class="btnSubmit" type="submit">
-                                    Заказать
-                                </button>
-                            </div>
-
-                            <div class="clearfix"></div>
-                        </div>
-
                     </div>
-                    <div class="form-right hidden-xs hidden-sm col-md-4">
-                        <div class="right-head">Помощь в ремонте Вашей техники становится ближе с каждым шагом.</div>
-                        <div class="right-content">&nbsp;</div>
-                        <div class="right-foot">&nbsp;</div>
-                    </div>
-            </form>
+                </div>
+                <!-- End Modal Form -->
+
             </div>
         </div>
 
-        <script src="js/jquery-2.1.4.min.js"></script>
-        <script src="js/jquery.validate.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/script.js"></script>
+    </div>
+    </div>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
