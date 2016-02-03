@@ -5,14 +5,14 @@ var currentStep = 0,
     stepStack = [],
     currentFieldset,
     nextFieldset,
-    form = $('#mform'),
-    btnSubmit = $('#mform .btnSubmit'),
-    btnPrev = $('#mform .prev'),
-    btnNext = $('#mform .next'),
-    fieldsets = $('#mform fieldset'),
+    form = $('#modalForm form'),
+    btnSubmit = $('#modalForm .btnSubmit'),
+    btnPrev = $('#modalForm .prev'),
+    btnNext = $('#modalForm .next'),
+    fieldsets = $('#modalForm fieldset'),
     progressbar = $('#progressbar li'),
-    radioProd = $('#mform input[name="prod"]'),
-    radioProdType = $('#mform input[name="prodType"]'),
+    radioProd = form.find('input[name="prod"]'),
+    radioProdType = form.find('input[name="prodType"]'),
     modalDialog = $('#oneClickModal');
 
 function showStep(nextStep) {
@@ -79,16 +79,16 @@ function showButtons(step) {
 
     if (step < maxStep && btnSubmit.is(':visible')) {
         btnSubmit.hide();
-        btnNext.show();
+        btnNext.show(); 
     }
 }
 
 $(document).ready(function () {
 
     //Modal dialog height
-    /*   $('#modalForm').on('show.bs.modal', function () {
-     $('#mform').css('height', $(window).height()*0.9);
-     });*/
+    /*$('#modalForm').on('show.bs.modal', function () {
+    $('#modalForm .modal-body').css('height', $(window).height() * 0.75);
+});*/
 
     // One click form
     $('#sendOneClick').click(function (e) {
@@ -105,7 +105,11 @@ $(document).ready(function () {
                 url: HTTP_HOST + 'Request/ajax',
                 data: {
                     method: 'saveForm',
-                    form: {user: {phone: userPhone}}
+                    form: {
+                        user: {
+                            phone: userPhone
+                        }
+                    }
                 },
                 success: function () {
                     showPreloader(false);
@@ -120,7 +124,7 @@ $(document).ready(function () {
         }
     });
 
-    $("#onePhone2").keydown(filterKeyPresses);
+    //    $("#onePhone2").keydown(filterKeyPresses);
 
     // Temporary prevent form submit
     form.submit(function (e) {
@@ -134,14 +138,6 @@ $(document).ready(function () {
 
     // Hide second step on progressbar
     progressbar.eq(1).hide();
-
-    //Hide main form 
-    //form.hide();
-
-    //$('#btnShowForm').click(function () {
-    //    $('.preForm').hide();
-    //    form.show();
-    //});
 
     btnNext.click(function () {
         showStep(currentStep + 1);
@@ -171,3 +167,19 @@ $(document).ready(function () {
     maxStep = fieldsets.length - 1;
 });
 
+/*var fit_modal_body;
+
+fit_modal_body = function (modal) {
+    var body, bodypaddings, header, headerheight, height, modalheight;
+    header = $(".modal-header", modal);
+    body = $(".modal-body", modal);
+    modalheight = parseInt(modal.css("height"));
+    headerheight = parseInt(header.css("height")) + parseInt(header.css("padding-top")) + parseInt(header.css("padding-bottom"));
+    bodypaddings = parseInt(body.css("padding-top")) + parseInt(body.css("padding-bottom"));
+    height = modalheight - headerheight - bodypaddings - 5;
+    return body.css("max-height", "" + height + "px");
+};
+
+$(window).resize(function () {
+    return fit_modal_body($(".modal"));
+});*/

@@ -1,8 +1,238 @@
-/* Divide modal body to 2 columns*/
-.modal-body > .row > div:nth-child(1) {
-    background-color: yellow;
+#modalForm .modal-dialog {
+    /* desired relative width */
+    height: 85%;
+    box-sizing: border-box;
 }
 
-.modal-body > .row > div:nth-child(2) {
+#modalForm .modal-body {
+    /*        min-height: 500px;*/
+    /*    overflow-y: auto;*/
+}
+
+
+/* Divide modal body to 2 columns*/
+
+#modalForm .modal-body > .row {
+    /*    min-height: 100%;*/
+}
+
+#modalForm .modal-body > .row > div:nth-child(1) {
+    /*    background-color: yellow;*/
+    /*    height: 100%;*/
+}
+
+#modalForm .modal-body > .row > div:nth-child(2) {
     background-color: orange;
+    height: 100%;
+    margin-top: 0.4em;
+}
+
+
+/* Form left side */
+
+.left-head {
+    /* background-color: rgba(0, 0, 0, 0.2);*/
+    /* height: 20%;*/
+    position: relative;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.left-content {
+    /*    background-color: yellowgreen;*/
+    overflow-y: scroll;
+    padding: 1em;
+    height: 420px;
+}
+
+
+/* Hide all the steps except thee first one */
+
+.left-content fieldset:not(:first-of-type) {
+    display: none;
+}
+
+
+/* Form right side */
+
+.right-head {
+    padding: 10px;
+    0px;
+}
+
+#progressbar {
+    margin: 0px;
+    padding: 0px;
+    display: table;
+    width: 100%;
+    /*    position: absolute;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+}
+
+#progressbar li {
+    display: table-cell;
+    box-sizing: border-box;
+    position: relative;
+    height: 0.7em;
+    background: rgba(0, 0, 0, 0.15);
+    color: #555;
+    border-right: 1px solid white;
+}
+
+#progressbar li:last-child {
+    border-right: 1px solid transparent;
+}
+
+#progressbar li > span {
+    position: absolute;
+    top: -1.1em;
+    left: 0;
+    width: 100%;
+    height: 1em;
+    font-size: small;
+    line-height: 1;
+    text-align: center;
+    visibility: hidden;
+    /*    display: none;*/
+}
+
+#progressbar li.active {
+    /*    background-color: #005A9D;*/
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 70%;
+}
+
+#progressbar li.pass {
+    background-color: #84B0D2;
+}
+
+#progressbar li.active > span {
+    visibility: visible;
+    /*    display: inline;*/
+}
+
+
+/* Radio buttons grid
+**********************************************/
+
+
+/*
+<label class="radio-thumbnail">
+    <input type="radio">
+    <div class="thumbnail">
+        <svg>
+        <div>Другое</div>
+    </div>
+</label>
+*/
+
+.radio-thumbnail {
+    margin: 0 auto;
+    display: block;
+    font-size: small;
+    font-weight: normal;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.radio-thumbnail > input[type="radio"] {
+    display: none;
+}
+
+.radio-thumbnail > input[type="radio"] + .thumbnail {
+    border: 2px solid transparent;
+    border-radius: 0px;
+    min-height: 120px;
+    height: 120px;
+}
+
+.radio-thumbnail > input[type="radio"] + .thumbnail:hover {
+    border: 2px solid #005a9d;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    background-color: #005a9d;
+    color: white;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.radio-thumbnail > input[type="radio"]:checked + .thumbnail {
+    border: 2px solid #005a9d;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.radio-thumbnail .thumbnail svg {
+    /*margin: 0.4em auto;*/
+    fill: none;
+    stroke: #005a9d;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-miterlimit: 4;
+    stroke-dasharray: none;
+    stroke-opacity: 1
+}
+
+.radio-thumbnail .thumbnail:hover svg {
+    fill: #005a9d;
+    stroke: white;
+    transition: fill 0.2s ease-out, stroke 0.2s ease-out;
+}
+
+.radio-thumbnail .thumbnail {
+    margin-bottom: 10px;
+    padding: 1px;
+}
+
+
+/* Buttons
+**********************************************/
+
+.prev,
+.next {
+    background-color: white;
+    color: rgba(0, 90, 157, 0.4);
+    border: 1px solid rgba(0, 90, 157, 0.4);
+    padding: 0.5em 1.5em;
+}
+
+.prev:hover,
+.next:hover {
+    border: 1px solid #005a9d;
+    box-shadow: 0 0 0 1px #005a9d;
+    color: rgba(0, 90, 157, 1);
+    transition: background-color 0.5s ease-out, border 0.5s ease-out;
+}
+
+.btnSubmit {
+    /*
+    min-width: 25%;
+    height: 40px;
+*/
+    padding: 0.5em 1.5em;
+    color: white;
+    background-color: #005a9d;
+    border: 1px solid rgba(0, 90, 157, 1);
+    /*box-shadow: 0 0 0 1px #005a9d;*/
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.btnSubmit:hover {
+    background-color: white;
+    color: #005a9d;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+@media (min-width: 768px) {
+    #progressbar li.active {
+        width: auto;
+    }
+    #progressbar li > span {
+        visibility: visible;
+        /*display: inline;*/
+    }
+    .left-content {
+        overflow-y: scroll;
+        padding: 1em;
+        margin-top: 1em;
+    }
 }
