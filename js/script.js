@@ -89,7 +89,7 @@ $(document).ready(function () {
     /*$('#modalForm').on('show.bs.modal', function () {
     $('#modalForm .modal-body').css('height', $(window).height() * 0.75);
 });*/
-
+    
     // One click form
     $('#sendOneClick').click(function (e) {
         var inputPhone = $('#onePhone2');

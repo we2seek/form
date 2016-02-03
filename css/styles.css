@@ -27,7 +27,6 @@
     margin-top: 0.4em;
 }
 
-
 /* Form left side */
 
 .left-head {
@@ -57,7 +56,6 @@
 
 .right-head {
     padding: 10px;
-    0px;
 }
 
 #progressbar {
@@ -144,8 +142,9 @@
 .radio-thumbnail > input[type="radio"] + .thumbnail {
     border: 2px solid transparent;
     border-radius: 0px;
-    min-height: 120px;
-    height: 120px;
+    height: 100px;
+    height: 100px;
+   
 }
 
 .radio-thumbnail > input[type="radio"] + .thumbnail:hover {
@@ -169,7 +168,9 @@
     stroke-linecap: round;
     stroke-miterlimit: 4;
     stroke-dasharray: none;
-    stroke-opacity: 1
+    stroke-opacity: 1;
+    width: 48px;
+    height: 48px;
 }
 
 .radio-thumbnail .thumbnail:hover svg {
@@ -208,11 +209,10 @@
     min-width: 25%;
     height: 40px;
 */
-    padding: 0.5em 1.5em;
+    padding: 0.5em;
     color: white;
     background-color: #005a9d;
     border: 1px solid rgba(0, 90, 157, 1);
-    /*box-shadow: 0 0 0 1px #005a9d;*/
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
 }
 
