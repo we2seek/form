@@ -1,15 +1,38 @@
+/*
+Colors used:
+#005a9d         - Mayster corporate color
+rgb(0, 90, 157) - Mayster corporate color
+#003660         - Darker color
+lightsteelblue  - Disabled color
+*/
+
+
+/* Imitate bootstrap row for better compatibility with current site css-grid*/
+
 .myRow {
     margin-right: auto;
     margin-left: auto;
+    /*letter-spacing: 0;*/
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-.myRow:before, .myRow:after {
+.myRow:before,
+.myRow:after {
     display: table;
     content: " ";
 }
 
 .myRow:after {
     clear: both;
+}
+
+
+/* Modal main form
+**********************************************/
+
+#modalForm .modal-title {
+    letter-spacing: 0;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #modalForm .modal-dialog {
@@ -19,9 +42,10 @@
 }
 
 #modalForm .modal-body {
-/*    min-height: 460px;*/
+    /*min-height: 460px;*/
     /*    overflow-y: auto;*/
 }
+
 
 /* Divide modal body to 2 columns*/
 
@@ -40,6 +64,7 @@
     margin-top: 0.4em;
 }
 
+
 /* Form left side */
 
 .left-head {
@@ -57,11 +82,13 @@
     height: 420px;
 }
 
+
 /* Hide all the steps except thee first one */
 
 .left-content fieldset:not(:first-of-type) {
     display: none;
 }
+
 
 /* Form right side */
 
@@ -121,8 +148,10 @@
     /*    display: inline;*/
 }
 
+
 /* Radio buttons grid
 **********************************************/
+
 
 /*
 <div class="col-xs-6 col-sm-4">
@@ -153,7 +182,7 @@
 }
 
 .radio-label > input[type="radio"] + .thumbnail {
-    border: 2px solid white;
+    border: 2px solid transparent;
     border-radius: 0px;
     height: 100px;
     width: 100px;
@@ -174,10 +203,10 @@
 }
 
 .radio-label .thumbnail svg {
-    /*margin: 0.4em auto;*/
     fill: none;
     stroke: #005a9d;
-    
+    /* Fix disproportional sizes for IE8-10 (from official docs) */
+    width: 100% \9;
 }
 
 .radio-label .thumbnail:hover svg {
@@ -186,8 +215,36 @@
     transition: fill 0.2s ease-out, stroke 0.2s ease-out;
 }
 
-.radio-label .thumbnail {
 
+/* Radio buttons with other products
+**********************************************/
+
+#otherProducts input[type="radio"] {
+    display: none;
+}
+
+#otherProducts label span {
+    display: block;
+    font-size: small;
+    font-weight: normal;
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 100%;
+    padding: 10px 5px;
+    text-align: center;
+    border: 2px solid white;
+}
+
+#otherProducts label span:hover {
+    border: 2px solid #005a9d;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    background-color: #005a9d;
+    color: white;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+#otherProducts label input[type="radio"]:checked + span {
+    border: 2px solid #005a9d;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
 }
 
 /* Buttons
@@ -231,15 +288,49 @@
     #progressbar li.active {
         width: auto;
     }
-
     #progressbar li > span {
         visibility: visible;
         /*display: inline;*/
     }
-
     .left-content {
         overflow-y: scroll;
         padding: 1em;
         margin-top: 1em;
     }
+}
+
+
+/* Contact details fix */
+
+.contact-details-list li:before {
+    width: 90px;
+    height: 90px;
+}
+
+
+/* fb fix */
+
+.social-icons.yellow li a {
+    height: auto;
+}
+
+
+/* Fucking magic for old css */
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* One click form */
+
+#oneClickModal {
+    letter-spacing: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#oneClickModal .modal-title {
+    font-size: large;
+    letter-spacing: 0;
 }
