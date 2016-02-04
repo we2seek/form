@@ -138,13 +138,14 @@
 */
 
 .radio-label {
-    margin: 5px auto;
-    display: inline-block;
+    display: block;
     font-size: small;
     font-weight: normal;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
     box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .radio-label > input[type="radio"] {
@@ -176,6 +177,7 @@
     /*margin: 0.4em auto;*/
     fill: none;
     stroke: #005a9d;
+    
 }
 
 .radio-label .thumbnail:hover svg {
